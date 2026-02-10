@@ -1,5 +1,19 @@
-# 4. LINEAR - DYNAMIC: Queue
-# FIFO: First-In-First-Out
+# 4. LINEAR - DYNAMIC (Queue)
+# Classification: Linear -> Dynamic -> Queue (FIFO)
 from collections import deque
-queue = deque(["User1", "User2", "User3"])
-print(f"Served: {queue.popleft()}") # Removes User1
+
+class Queue:
+    def __init__(self):
+        self.buffer = deque()
+        
+    def enqueue(self, data):
+        self.buffer.append(data)
+        
+    def dequeue(self):
+        return self.buffer.popleft()
+
+# Usage
+my_queue = Queue()
+my_queue.enqueue("User A")
+my_queue.enqueue("User B")
+print(f"Queue FIFO Dequeue: {my_queue.dequeue()}") # User A comes out first
