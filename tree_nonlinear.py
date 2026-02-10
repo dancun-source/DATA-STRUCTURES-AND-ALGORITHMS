@@ -1,8 +1,15 @@
-# 5. NON-LINEAR: Tree
+# 5. NON-LINEAR (Tree)
+# Classification: Non-Linear -> Tree
 class TreeNode:
     def __init__(self, key):
+        self.val = key
         self.left = None
         self.right = None
-        self.val = key
 
-root = TreeNode("Root")
+# Creating a hierarchical structure
+root = TreeNode("CEO")
+root.left = TreeNode("Manager A")
+root.right = TreeNode("Manager B")
+
+print("--- Non-Linear Data Structure (Tree) ---")
+print(f"Root: {root.val} | Left Child: {root.left.val} | Right Child: {root.right.val}")
